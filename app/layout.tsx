@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 import "./globals.css";
 import { QueryProvider } from "@/components/providers/query-provider";
 
@@ -7,6 +8,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   weight: ["300", "400", "500", "600", "700", "800"],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -26,8 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${plusJakartaSans.variable} font-sans`}>
-        <QueryProvider>{children}</QueryProvider>
+      <body className={`${plusJakartaSans.variable} font-sans antialiased`}>
+        <AntdRegistry>
+          <QueryProvider>{children}</QueryProvider>
+        </AntdRegistry>
       </body>
     </html>
   );

@@ -67,7 +67,7 @@ export function TopTopicsWidget({
               return (
                 <div
                   key={topic.name}
-                  className="flex items-center justify-between text-sm"
+                  className="flex items-center justify-between text-sm border-b border-gray-200 pb-2 last:border-0"
                 >
                   <div className="flex-1 min-w-0">
                     <div className="font-medium text-neutral-900 dark:text-neutral-100 truncate">

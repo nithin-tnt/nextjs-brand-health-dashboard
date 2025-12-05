@@ -11,14 +11,17 @@ export function DashboardHeader() {
       <div className="flex items-center justify-between">
         {/* Left: Logo and Navigation */}
         <div className="flex items-center gap-8">
-          <div className="flex items-center gap-3">
-            <Image 
-              src="/logo.png" 
-              alt="Pipaltree Logo" 
-              width={160} 
-              height={160}
-              className="rounded-lg"
-            />
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <div className="w-24 h-8 flex-shrink-0">
+              <Image 
+                src="/logo.png" 
+                alt="Pipaltree Logo" 
+                width={96} 
+                height={96}
+                className="rounded-lg"
+                priority
+              />
+            </div>
           </div>
           
           {/* Navigation Menu */}
