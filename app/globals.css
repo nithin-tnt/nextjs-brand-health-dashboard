@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary brand colors */
+  --color-primary-50: 240 249 255;
+  --color-primary-100: 224 242 254;
+  --color-primary-200: 186 230 253;
+  --color-primary-300: 125 211 252;
+  --color-primary-400: 56 189 248;
+  --color-primary-500: 14 165 233;
+  --color-primary-600: 2 132 199;
+  --color-primary-700: 3 105 161;
+  --color-primary-800: 7 89 133;
+  --color-primary-900: 12 74 110;
+
+  /* Accent colors */
+  --color-accent-500: 168 85 247;
+
+  /* Success colors */
+  --color-success-400: 74 222 128;
+  --color-success-600: 22 163 74;
+
+  /* Warning colors */
+  --color-warning-400: 251 191 36;
+  --color-warning-600: 217 119 6;
+
+  /* Danger colors */
+  --color-danger-400: 248 113 113;
+  --color-danger-600: 220 38 38;
+
+  /* Neutral colors */
+  --color-neutral-50: 248 250 252;
+  --color-neutral-100: 241 245 249;
+  --color-neutral-200: 226 232 240;
+  --color-neutral-300: 203 213 225;
+  --color-neutral-400: 148 163 184;
+  --color-neutral-500: 100 116 139;
+  --color-neutral-600: 71 85 105;
+  --color-neutral-700: 51 65 85;
+  --color-neutral-800: 30 41 59;
+  --color-neutral-900: 15 23 42;
+
+  /* Semantic */
+  --background: 0 0% 100%;
+  --foreground: 15 23 42;
+
+  /* Spacing */
+  --spacing-md: 1rem;
+
+  /* Radius */
+  --radius-2xl: 1.5rem;
+
+  /* Transitions */
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: 222 47% 11%;
+  --foreground: 248 250 252;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: hsl(var(--background));
+  color: rgb(var(--foreground));
+}
+
+/* React Grid Layout */
+.react-grid-item {
+  transition: all var(--transition-base);
+}
+
+.react-grid-item.react-grid-placeholder {
+  background: rgb(var(--color-primary-400) / 0.2);
+  border: 2px dashed rgb(var(--color-primary-500));
+  border-radius: var(--radius-2xl);
+}
+
+/* Custom z-index */
+.z-1040 {
+  z-index: 1040;
+}
+
+.z-1050 {
+  z-index: 1050;
 }
