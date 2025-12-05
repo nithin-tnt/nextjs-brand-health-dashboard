@@ -18,16 +18,24 @@ export function FilterHeader({ onAddWidget }: FilterHeaderProps) {
   ]);
   const [timeframe, setTimeframe] = useState<string>("Daily");
 
+  // Get greeting based on time of day
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour < 12) return "Good Morning";
+    if (hour < 18) return "Good Afternoon";
+    return "Good Evening";
+  };
+
   return (
     <div className="px-8 py-4 border-t border-gray-200" style={{ backgroundColor: '#F6F6F6' }}>
       <div className="flex items-center justify-between">
         {/* Left: Title or Greeting */}
         <div>
           <h2 className="text-2xl font-semibold text-neutral-900">
-            Good Morning, Analyst!
+            {getGreeting()}, Analyst!
           </h2>
           <p className="text-md text-neutral-900 mt-2">
-            Brand Health Overview
+            Your Brand Health Overview
           </p>
         </div>
 
